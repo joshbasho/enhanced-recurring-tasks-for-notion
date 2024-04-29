@@ -25,7 +25,7 @@ The main impetus behind this is that I don't like tasks cluttering up my board. 
 2. **Archiving and Task Creation**:
     - Non-recurring tasks are moved from "Done" to "Archive".
     - Recurring tasks are moved to "Recurring Archive" where "Date Recurring" is set if not manually specified.
-    - On the day a task is set to recur, it checks the "Recurring Archive" for any task due that day, creates a new task in "New Recurring", and moves the old task to "Archive" to prevent duplication.
+    - It checks the "Recurring Archive" for any task due that day, creates a new task in "New Recurring", and moves the old task to "Archive" to prevent duplication.
 
 ## Setup
 
