@@ -36,12 +36,12 @@ For example, I try to clip my dog's nails every week, but often fall behind. I'd
    - Duplicate this template page: [Notion Template](https://rounded-produce-1bd.notion.site/88ae47e9038248f382702508ffb359db?v=8b60d8fb26264332991286dadbb786de).
    - After duplicating, access the page in your browser Database ID from the URL. 
 
-2a. **Integrate with Your Existing Task List**
-   If you prefer to integrate the application with your existing task list, follow these steps:
-   1. In your "Status" option, add the following options: "New Recurring", "Archive", "Recurring Archive" (I personally hide "Archive" and "Recurring Archive")
-   2. Add the following date properties to your database: "Date Recurring" and "Date Completed".
-   3. Set up an automation in Notion that updates "Date Completed" with the current date and time when a task is moved to your "Done" category.
-   4. Modify the `completedTaskStatus` and `statusProperty` in `/libs/config.mjs` to match your database's setup.
+    - **Integrate with Your Existing Task List**
+       If you prefer to integrate the application with your existing task list, follow these steps:
+       1. In your "Status" option, add the following options: "New Recurring", "Archive", "Recurring Archive" (I personally hide "Archive" and "Recurring Archive")
+       2. Add the following date properties to your database: "Date Recurring" and "Date Completed".
+       3. Set up an automation in Notion that updates "Date Completed" with the current date and time when a task is moved to your "Done" category.
+       4. Modify the `completedTaskStatus` and `statusProperty` in `/libs/config.mjs` to match your database's setup.
 
 3. **Configure the Application**
    - Clone the repository to your local machine or server.
