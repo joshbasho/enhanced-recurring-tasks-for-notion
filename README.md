@@ -38,7 +38,7 @@ For example, I try to clip my dog's nails every week, but often fall behind. I'd
 
     - **Integrate with Your Existing Task List**
        If you prefer to integrate the application with your existing task list, follow these steps:
-       1. In your "Status" option, add the following options: "New Recurring", "Archive", "Recurring Archive" (I personally hide "Archive" and "Recurring Archive")
+       1. In your "Status" property, add the following options: "New Recurring", "Archive", "Recurring Archive" (I personally hide "Archive" and "Recurring Archive")
        2. Add the following date properties to your database: "Date Recurring" and "Date Completed".
        3. Set up an automation in Notion that updates "Date Completed" with the current date and time when a task is moved to your "Done" category.
        4. Modify the `completedTaskStatus` and `statusProperty` in `/libs/config.mjs` to match your database's setup.
