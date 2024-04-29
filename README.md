@@ -2,11 +2,17 @@
 
 "Enhanced Recurring Tasks for Notion" is an application designed to offer flexible recurring task management within Notion. Unlike the default recurring tasks in Notion that follow a strict schedule, this application allows tasks to recur based on their completion date. 
 
+For example, let's say you have task on you board for "Clip Dog's Nails" that you want to recur every week. If you were using a Notion's recurring option, you'd have to set it to recur on an exact schedule. For example, you could set it to create a new task every Saturday.
+
+This is mostly fine, but what if you fall behind and end up clipping your dog's nails on Thursday? The task will still be created on Saturday, despite only having clipped your dog's nails a couple days ago. 
+
+With "Enhanced Recurring Tasks for Notion", you can instead set this task to recur based on the completion date. If you fall behind and don't clip your dog's nails until Thursday, the next task for clipping your dog's nails won't be created until the following Thursday. 
+
 ## Purpose
 
-This application is best for managing tasks that do not adhere to a strict schedule. I peronsally use it for personal tasks (especially cleaning) where the interval I want it to repeat is more of a goal than a fixed schedule. 
+This application solves a pretty niche use case. It's best for managing tasks that do not adhere to a strict schedule. I peronsally use it for personal tasks (especially cleaning) where the interval I want it to repeat is more of a goal than a fixed schedule. 
 
-For example, I try to clip my dog's nails every week, but often fall behind. I'd rather the task recur from the day it was actually completed, rather than piling up unnecessary reminders or duplicates.
+The main impetus behind this is that I don't like tasks cluttering up my board. If there's something I only need to do every two weeks, I want it totally off my radar for the next two weeks, regardless of when I complete it. 
 
 ## How It Works
 
