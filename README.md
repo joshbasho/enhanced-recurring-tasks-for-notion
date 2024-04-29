@@ -40,8 +40,16 @@ For example, I try to clip my dog's nails every week, but often fall behind. I'd
    - Clone the repository to your local machine or server.
    - Install dependencies: `npm install`.
    - Copy the `.env.example` file to `.env` and fill in your Notion API token and the database ID
-   - Run using `npm start` or `node src/index.mjs`
-   - Make sure you are running the application from the root directory or else dotenv won't work correctly. 
+     
+4. **Start Using the Integration!!**
+   - To set the interval a task should recur, simply update "Recurring" with the interval (e.g. "1 week", "2 months", "5 days").
+   - To set a task to recur a single time, update "Date Recurring" with the date you want it to recur.
+   - There's a couple sample tasks with examples.
+
+5. **Run the Application Nightly**
+    - Run manually, set up a cron job, or create a lambda function. 
+    - Run using `npm start` or `node src/index.mjs`
+    - Make sure you are running the application from the root directory or else dotenv won't work correctly.
   
 ###  **Integrate with Your Existing Task List**
 If you prefer to integrate the application with your existing task list, you'll need to make some changes. 
@@ -63,7 +71,7 @@ If you prefer to integrate the application with your existing task list, you'll 
     - Update `statusProperty` to match your Status property's type ("select" or "status").
     - Update `completedTaskStatus` with the Status option that indicates a task is completed (e.g. "Done"). 
     - Update `recurTaskStatus` with the Status option you would like set when a new recurring task is created (e.g. "Not Started")
-11. Run using `npm start` or `node src/index.mjs`
+11. Follow steps 4 and 5 from "Step by Step Setup". 
 
 ### Script Execution
 - **Locally**: Run the script as a cron job at your preferred time (e.g., 3:00 AM local time).
