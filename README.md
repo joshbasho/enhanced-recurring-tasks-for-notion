@@ -36,18 +36,34 @@ For example, I try to clip my dog's nails every week, but often fall behind. I'd
    - Duplicate this template page: [Notion Template](https://rounded-produce-1bd.notion.site/88ae47e9038248f382702508ffb359db?v=8b60d8fb26264332991286dadbb786de).
    - After duplicating, access the page in your browser Database ID from the URL. 
 
-    - **Integrate with Your Existing Task List**
-       If you prefer to integrate the application with your existing task list, follow these steps:
-       1. In your "Status" property, add the following options: "New Recurring", "Archive", "Recurring Archive" (I personally hide "Archive" and "Recurring Archive")
-       2. Add the following date properties to your database: "Date Recurring" and "Date Completed".
-       3. Set up an automation in Notion that updates "Date Completed" with the current date and time when a task is moved to your "Done" category.
-       4. Modify the `completedTaskStatus` and `statusProperty` in `/libs/config.mjs` to match your database's setup.
-
 3. **Configure the Application**
    - Clone the repository to your local machine or server.
    - Install dependencies: `npm install`.
    - Copy the `.env.example` file to `.env` and fill in your Notion API token and the database ID
-   - run using `npm start` or `node src/index.mjs`
+   - Run using `npm start` or `node src/index.mjs`
+   - Make sure you are running the application from the root directory or else dotenv won't work correctly. 
+  
+###  **Integrate with Your Existing Task List**
+If you prefer to integrate the application with your existing task list, you'll need to make some changes. 
+1. Create a Notion Integration as outlined above. 
+2. Navigate to your Task List in the browser and get the Database ID from the URL.
+3. Copy the `.env.example` file to `.env` and fill in your Notion API token and the database ID
+4. In Notion:
+   - Rename you property that handles status to "Status".
+   - Add the following options to your Status property: "Archive", "Recurring Archive" (I personally hide them both).
+   - Add the following propeties to your database (You can just select any task on the list and add the property to that page, it will propograte to the entire database).
+       - Name: "Date Recurring", Type: "Date"
+       - Name "Date Completed", Type: "Date"
+       - Name: "Recurring", Type: "Text"
+   - Set up an automation in Notion that updates "Date Completed" with the current date and time when a task is moved to your "Done" category.
+       - e.g. "When Status is set to "Done" set "Date Completed" to Now.  
+   - Determine if you are using a type of "status" or "select" for the Status property.
+       - Open a task => click "Status => Edit property => Type => see if it says "select" or "status" 
+10. Update variables in `src/libs/config.mjs`.
+    - Update `statusProperty` to match your Status property's type ("select" or "status").
+    - Update `completedTaskStatus` with the Status option that indicates a task is completed (e.g. "Done"). 
+    - Update `recurTaskStatus` with the Status option you would like set when a new recurring task is created (e.g. "Not Started")
+11. Run using `npm start` or `node src/index.mjs`
 
 ### Script Execution
 - **Locally**: Run the script as a cron job at your preferred time (e.g., 3:00 AM local time).
