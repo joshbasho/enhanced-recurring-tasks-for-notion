@@ -99,7 +99,7 @@ If you prefer to integrate the application with your existing task list, you'll 
     - Should cost literally nothing to run. 
 
 ## Error Handling
-When tasks fail to process, the application logs the error details in "New Recurring" for troubleshooting.
+When tasks fail to process, a new task is created with an error message. For example, if you set an invalid "Recurring" value, it will create a new task saying you need to fix the "recurring" interval on the task that failed. 
 
 ## Contributing
 Contributions are welcome! Feel free to fork the repository, make improvements, and submit pull requests.
