@@ -66,24 +66,35 @@ If you prefer to integrate the application with your existing task list, you'll 
 3. Copy the `.env.example` file to `.env` and fill in your Notion API token and the database ID
 4. In Notion:
    - Rename you property that handles status to "Status".
-   - Add the following options to your Status property: "Archive", "Recurring Archive" (I personally hide them both).
-   - Add the following propeties to your database (You can just select any task and add the property to that page, it will propograte to the entire database).
-       - Name: "Date Recurring", Type: "Date"
-       - Name "Date Completed", Type: "Date"
-       - Name: "Recurring", Type: "Text"
-   - Set up an automation in Notion that updates "Date Completed" with the current date and time when a task is moved to your "Done" category.
-       - e.g. "When Status is set to "Done" set "Date Completed" to Now.  
+       - Open any task => Click the property to change => Rename 
+   - Add the following options to your Status property: "Archive" and "Recurring Archive" (I personally hide them both) 
+       - Open any task => click "Status" => Edit property => Options => "+"
+   - Add the following propeties to your database
+       - Open any task => Add a property 
+       - Type: "Date", Name: "Date Recurring"
+       - Type: "Date", Name "Date Completed"
+       - Type: "Text", Name: "Recurring"
+   - Set up an automation that updates "Date Completed" with the current date and time when a task is moved to your "Done" category.
+       - Click ligtening bolt in top right => New automation
+       - Add trigger
+           - Property edited => Status => Uncheck "Any Option" => Select the option that marks a task as completed
+       - Add Action
+           - Edit Property => Date Recurring => Now
+       - Create  
    - Determine if you are using a type of "status" or "select" for the Status property.
-       - Open a task => click "Status => Edit property => Type => see if it says "select" or "status" 
+       - Open a task => click "Status" => Edit property => Type => see if it says "select" or "status" 
 10. Update variables in `src/libs/config.mjs`.
     - Update `statusProperty` to match your Status property's type ("select" or "status").
-    - Update `completedTaskStatus` with the Status option that indicates a task is completed (e.g. "Done"). 
+    - Update `completedTaskStatus` with the name of the Status option that indicates a task is completed (e.g. "Done"). 
     - Update `recurTaskStatus` with the Status option you would like set when a new recurring task is created (e.g. "Not Started")
 11. Follow steps 4 and 5 from "Step by Step Setup". 
 
 ### Script Execution
 - **Locally**: Run the script as a cron job at your preferred time (e.g., 3:00 AM local time).
-- **Serverless**: With adjustments, deploy the script to run as a Lambda function.
+- **Serverless**: With adjustments, deploy the script to run as an AWS Lambda function.
+    - Mainly just change IIFE to `export const handler = async (event) => { function... }`
+    - Trigger lambda with a Cloudwatch Event Rule that runs every night at like 3:00am.
+    - Should cost literally nothing to run. 
 
 ## Error Handling
 When tasks fail to process, the application logs the error details in "New Recurring" for troubleshooting.
