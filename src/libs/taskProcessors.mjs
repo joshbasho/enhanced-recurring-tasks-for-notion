@@ -2,7 +2,7 @@
 import { parseISO, add, format } from 'date-fns';
 import {notionPageUpdate, notionPageCreate} from './notion.mjs';
 import {errorHandler, logTaskActivity, delay, errorPageId, createErrorCard} from './helpers.mjs';
-import { config } from '../config.mjs';
+import { config } from './config.mjs';
 const tasksDb = config.tasksDb;
 
 

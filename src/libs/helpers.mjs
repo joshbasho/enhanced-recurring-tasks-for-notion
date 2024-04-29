@@ -1,5 +1,5 @@
 import { notionPageCreate, notionDatabaseQuery } from "./notion.mjs";
-import { config } from "../config.mjs";
+import { config } from "./config.mjs";
 /**
  * Delays the execution for a specified amount of milliseconds.
  * @param {number} ms - The amount of milliseconds to delay.

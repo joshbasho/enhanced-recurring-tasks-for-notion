@@ -1,7 +1,7 @@
 import { archiveTasks, processTasks, setDateRecurring, createRecurringTasks, excludeFailedResults } from './libs/taskProcessors.mjs'
 import { createSummary, errorHandler } from './libs/helpers.mjs'
 import { notionDatabaseQuery } from './libs/notion.mjs';
-import { config } from './config.mjs';
+import { config } from './libs/config.mjs'
 
 /**
  * Processes tasks marked as done by querying the Notion database. This involves setting dates for recurring tasks,

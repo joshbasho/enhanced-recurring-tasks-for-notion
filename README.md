@@ -46,7 +46,8 @@ For example, I try to clip my dog's nails every week, but often fall behind. I'd
 3. **Configure the Application**
    - Clone the repository to your local machine or server.
    - Install dependencies: `npm install`.
-   - Copy the `.env.example` file to `.env` and fill in your Notion API token and the database ID.
+   - Copy the `.env.example` file to `.env` and fill in your Notion API token and the database ID
+   - run using `npm start` or `node src/index.mjs`
 
 ### Script Execution
 - **Locally**: Run the script as a cron job at your preferred time (e.g., 3:00 AM local time).

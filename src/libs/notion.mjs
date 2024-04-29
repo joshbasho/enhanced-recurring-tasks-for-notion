@@ -1,6 +1,6 @@
 
 import { Client } from "@notionhq/client";
-import { config } from "../config.mjs";
+import { config } from "./config.mjs";
 
 /**
  * Creates a Notion client instance with the provided authentication token.
