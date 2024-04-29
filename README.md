@@ -8,6 +8,8 @@ This is mostly fine, but what if you fall behind and end up clipping your dog's 
 
 With "Enhanced Recurring Tasks for Notion", you can instead set this task to recur based on the completion date. If you fall behind and don't clip your dog's nails until Thursday, the next task for clipping your dog's nails won't be created until the following Thursday. 
 
+Additionally, the application handles moving of tasks to an "Archive" after their completion. 
+
 ## Purpose
 
 This application solves a pretty niche use case. It's best for managing tasks that do not adhere to a strict schedule. I peronsally use it for personal tasks (especially cleaning) where the interval I want it to repeat is more of a goal than a fixed schedule. 
