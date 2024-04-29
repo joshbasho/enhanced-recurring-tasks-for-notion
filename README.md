@@ -34,12 +34,14 @@ For example, I try to clip my dog's nails every week, but often fall behind. I'd
 
 2. **Prepare Your Notion Database**
    - Duplicate this template page: [Notion Template](https://rounded-produce-1bd.notion.site/88ae47e9038248f382702508ffb359db?v=8b60d8fb26264332991286dadbb786de).
-   - After duplicating, access the page in your browser Database ID from the URL. 
+   - After duplicating, access the page in your browser and get the Database ID from the URL.
+   - e.g. https://www.notion.so/88ae47e9038248f382702508ffb359db?v=8b60d8fb26264332991286dadbb786de
+   - the Datebase ID in this case is 88ae47e9038248f382702508ffb359db. 
 
 3. **Configure the Application**
    - Clone the repository to your local machine or server.
    - Install dependencies: `npm install`.
-   - Copy the `.env.example` file to `.env` and fill in your Notion API token and the database ID
+   - Copy the `.env.example` file to `.env` and fill in your Notion API token and the Database ID
      
 4. **Start Using the Integration!!**
    - To set the interval a task should recur, simply update "Recurring" with the interval (e.g. "1 week", "2 months", "5 days").
@@ -59,7 +61,7 @@ If you prefer to integrate the application with your existing task list, you'll 
 4. In Notion:
    - Rename you property that handles status to "Status".
    - Add the following options to your Status property: "Archive", "Recurring Archive" (I personally hide them both).
-   - Add the following propeties to your database (You can just select any task on the list and add the property to that page, it will propograte to the entire database).
+   - Add the following propeties to your database (You can just select any task and add the property to that page, it will propograte to the entire database).
        - Name: "Date Recurring", Type: "Date"
        - Name "Date Completed", Type: "Date"
        - Name: "Recurring", Type: "Text"
